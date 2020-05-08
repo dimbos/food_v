@@ -49,7 +49,6 @@ const getData = async function(url){
 
   return await  response.json();
 
-  console.log(response);
 };
 
 
@@ -178,7 +177,6 @@ function openGoods(e){
   if(login == null || localStorage.getItem('DeliveryFood') == null){
     toogleModalAuth();
   }else{
-  //console.log(login);
   
   const restaurant = target.closest('.card-restaurant');
 
@@ -187,7 +185,6 @@ function openGoods(e){
     const info = restaurant.dataset.info.split(',');
 
     const [name, price, stars, kitchen] = info;
-    console.log(name, price);
 
     cardsMenu.textContent = '';
     containerPromo.classList.add('hide');
@@ -232,11 +229,6 @@ function addToCart(e){
         count: 1
       })
     }
-
-
-
-    console.log(cart);
-
   }
 }
 
@@ -351,9 +343,7 @@ function init(){
 
 								const searchGoods = goods.filter(function(item) {
 									return item.name.toLowerCase().includes(value)
-								})
-
-								console.log(searchGoods);
+								});
 								
 								cardsMenu.textContent = '';
 
